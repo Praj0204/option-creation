@@ -1,3 +1,4 @@
+<!-- HTML -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,18 @@
       overflow-y: auto;
     }
 
+    .emailContainer {
+      margin-top: 10px;
+    }
+
+    .emailInput {
+      margin-right: 10px;
+    }
+
+    .emails {
+      margin-top: 10px;
+    }
+
     #clearButton {
       display: none;
       margin-top: 10px;
@@ -24,7 +37,20 @@
     }
 
     #addOptionContainer {
+      display: flex;
       margin-top: 10px;
+    }
+
+    #newOptionText {
+      margin-right: 10px;
+    }
+
+    #addEmailContainer {
+      margin-top: 10px;
+    }
+
+    #emailInput {
+      margin-right: 10px;
     }
   </style>
 </head>
@@ -43,7 +69,14 @@
   <button id="addOptionButton" onclick="addOption()">Add Option</button>
 </div>
 
+<!-- Common "Add Email" section -->
+<div id="addEmailContainer">
+  <input type="text" id="emailInput" placeholder="Type email">
+  <button id="addEmailButton" onclick="addEmail()">Add Email</button>
+</div>
+
 <script src="script.js"></script>
 
 </body>
 </html>
+
