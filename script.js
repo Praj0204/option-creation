@@ -76,4 +76,58 @@ const options = [
       addOptionText.value = '';
     }
   }
+
+
+
+// Function to add an email for the selected option
+// Function to add email to the selected option's div
+function addEmail() {
+    const selectedOption = selectDropdown.value;
+    const emailInput = document.getElementById('emailInput');
+    const email = emailInput.value.trim();
   
+    if (email !== '') {
+      // Find the selected option
+      const option = options.find(opt => opt.value === selectedOption);
+  
+      // Create a new div for the email
+      const emailDiv = document.createElement('div');
+      emailDiv.textContent = `Email: ${email}`;
+  
+      // Get the content div of the selected option
+      const contentDiv = document.getElementById('content_' + selectedOption);
+  
+      // Append the email div to the content div
+      contentDiv.appendChild(emailDiv);
+  
+      // Clear the email input
+      emailInput.value = '';
+    }
+  }
+  
+  // Event listener for select dropdown change
+  selectDropdown.addEventListener('change', function() {
+    const selectedOption = this.value;
+    const addEmailContainer = document.getElementById('addEmailContainer');
+  
+    // Display "Add Email" section
+    addEmailContainer.style.display = 'block';
+  
+    // Hide all content divs
+    const contentDivs = document.getElementsByClassName('content');
+    for (let i = 0; i < contentDivs.length; i++) {
+      contentDivs[i].style.display = 'none';
+    }
+  
+    // Display content based on selected option
+    document.getElementById('content_' + selectedOption).style.display = 'block';
+  });
+  
+  // Function to clear content
+  function clearContent() {
+    const selectedOption = selectDropdown.value;
+    const contentDiv = document.getElementById('content_' + selectedOption);
+  
+    // Clear the content of the selected option's div
+    contentDiv.textContent = '';
+  }
