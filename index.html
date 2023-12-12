@@ -1,82 +1,112 @@
-<!-- HTML -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Select Option Display Editable Content</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Container</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+
+    #container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
     .content {
       display: none;
-      margin-top: 10px;
-      padding: 10px;
+      margin-top: 20px;
+      padding: 15px;
       border: 1px solid #ccc;
-      float: right;
-      height: 500px;
-      width: 500px;
+      border-radius: 4px;
+      height: 300px;
+      width: 90%;
       overflow-y: auto;
-    }
-
-    .emailContainer {
-      margin-top: 10px;
-    }
-
-    .emailInput {
-      margin-right: 10px;
-    }
-
-    .emails {
-      margin-top: 10px;
     }
 
     #clearButton {
       display: none;
       margin-top: 10px;
-      position: absolute;
-      left: 98%;
-      top: 86%;
-      transform: translateX(-50%);
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
     }
 
-    #addOptionContainer {
-      display: flex;
-      margin-top: 10px;
-    }
-
-    #newOptionText {
-      margin-right: 10px;
-    }
-
+    #addOptionContainer,
     #addEmailContainer {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .emailList {
       margin-top: 10px;
     }
 
-    #emailInput {
-      margin-right: 10px;
+    .emailList div {
+      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
 
-<select id="selectOption"></select>
+<div id="container">
+  <h1>LISTS</h1>
 
-<div id="contentContainer">
-  <!-- Content divs will be added dynamically here -->
-</div>
+  <select id="selectOption"></select>
 
-<button id="clearButton" onclick="clearContent()">Clear</button>
+  <div id="contentContainer">
+    <!-- Content divs will be added dynamically here -->
+  </div>
 
-<div id="addOptionContainer">
-  <input type="text" id="newOptionText" placeholder="Type new option text">
-  <button id="addOptionButton" onclick="addOption()">Add Option</button>
-</div>
+  <button id="clearButton" onclick="clearContent()">Clear Content</button>
 
-<!-- Common "Add Email" section -->
-<div id="addEmailContainer">
-  <input type="text" id="emailInput" placeholder="Type email">
-  <button id="addEmailButton" onclick="addEmail()">Add Email</button>
+  <div id="addOptionContainer">
+    <input type="text" id="newOptionText" placeholder="Type new option text">
+    <button id="addOptionButton" onclick="addOption()">Add Option</button>
+  </div>
+
+  <!-- Common "Add Email" section -->
+  <div id="addEmailContainer">
+    <input type="text" id="emailInput" placeholder="Type email">
+    <button id="addEmailButton" onclick="addEmail()">Add Email</button>
+  </div>
+
+  <div class="emailList">
+    <!-- Display emails for the selected option -->
+  </div>
 </div>
 
 <script src="script.js"></script>
 
 </body>
 </html>
-
