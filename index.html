@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Option Display Editable Content</title>
+  <style>
+    .content {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      float: right;
+      height: 500px;
+      width: 500px;
+      overflow-y: auto;
+    }
+
+    #clearButton {
+      display: none;
+      margin-top: 10px;
+      position: absolute;
+      left: 98%;
+      top: 86%;
+      transform: translateX(-50%);
+    }
+
+    #addOptionContainer {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<select id="selectOption"></select>
+
+<div id="contentContainer">
+  <!-- Content divs will be added dynamically here -->
+</div>
+
+<button id="clearButton" onclick="clearContent()">Clear</button>
+
+<div id="addOptionContainer">
+  <input type="text" id="newOptionText" placeholder="Type new option text">
+  <button id="addOptionButton" onclick="addOption()">Add Option</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
